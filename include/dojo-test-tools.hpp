@@ -41,8 +41,6 @@ void test::Test_##TC::execute()                                 \
 
 namespace test
 {
-    };
-
     class no_impl_exception : public std::exception
     {
         virtual const char* what() const throw();
