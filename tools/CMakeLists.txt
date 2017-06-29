@@ -7,5 +7,3 @@ add_library(test-tools SHARED "./src/dojo-test-tools.cpp"
                               "./src/detail/test_exception.cpp"
                               "./src/detail/TestRunner.cpp")
 
-add_executable(self-tests "./test/test.cpp")
-target_link_libraries(self-tests test-tools)
