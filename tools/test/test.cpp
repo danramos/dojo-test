@@ -2,7 +2,7 @@
 
 TEST_CASE(Sample)
 {
-
+    ASSERT_EQUAL(true, true)
 }
 
 int main()
