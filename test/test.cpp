@@ -40,6 +40,7 @@ FIXTURE_TEST_CASE(GetLayoutOfEmptyBoard, Fixture)
  */
 FIXTURE_TEST_CASE(PlayerOnePlacesFirstTokenInColumn0, Fixture)
 {
+    checkBoundaries();
     game.place(1, 0);
 
     const std::vector<std::vector<int>> expected = {
@@ -59,6 +60,7 @@ FIXTURE_TEST_CASE(PlayerOnePlacesFirstTokenInColumn0, Fixture)
 
 FIXTURE_TEST_CASE(PlayerTwoPlacesFirstTokenInColumn0, Fixture)
 {
+    checkBoundaries();
     game.place(2, 0);
 
     const std::vector<std::vector<int>> expected = {
@@ -78,6 +80,7 @@ FIXTURE_TEST_CASE(PlayerTwoPlacesFirstTokenInColumn0, Fixture)
 
 FIXTURE_TEST_CASE(PlayerOnePlacesMultipleTokenInOneColumn, Fixture)
 {
+    checkBoundaries();
     game.place(1, 1);
     game.place(1, 1);
     game.place(1, 1);
@@ -99,6 +102,7 @@ FIXTURE_TEST_CASE(PlayerOnePlacesMultipleTokenInOneColumn, Fixture)
 
 FIXTURE_TEST_CASE(PlayerOnePlacesExcessTokenInOneColumnShallNotBeAllowed, Fixture)
 {
+    checkBoundaries();
     for (int i = 0; i < 6; i++) {
         ASSERT_EQUAL(true, game.isAdditionalTokenAllowed(1));
         game.place(1, 1);
@@ -108,11 +112,13 @@ FIXTURE_TEST_CASE(PlayerOnePlacesExcessTokenInOneColumnShallNotBeAllowed, Fixtur
 
 FIXTURE_TEST_CASE(NoWinnerInStart, Fixture)
 {
+    checkBoundaries();
     ASSERT_EQUAL(0, game.getWinner());
 }
 
 FIXTURE_TEST_CASE(PlayerOneWinsWithVertical, Fixture)
 {
+   checkBoundaries();
    game.place(1,0);
    ASSERT_EQUAL(0, game.getWinner());
 
@@ -128,6 +134,8 @@ FIXTURE_TEST_CASE(PlayerOneWinsWithVertical, Fixture)
 
 FIXTURE_TEST_CASE(PlayerTwoWinsWithVerticalInColumnTwo, Fixture)
 {
+   checkBoundaries();
+
    game.place(2,2);
    ASSERT_EQUAL(0, game.getWinner());
 
@@ -143,6 +151,7 @@ FIXTURE_TEST_CASE(PlayerTwoWinsWithVerticalInColumnTwo, Fixture)
 
 FIXTURE_TEST_CASE(PlayerOneWinsWithVerticalInTop, Fixture)
 {
+   checkBoundaries();
     /**
      * 1 0 0 0 0 0 0
      * 1 0 0 0 0 0 0
@@ -165,6 +174,7 @@ FIXTURE_TEST_CASE(PlayerOneWinsWithVerticalInTop, Fixture)
 
 FIXTURE_TEST_CASE(PlayerOneWinsWithHorizontalInBottomRow, Fixture)
 {
+   checkBoundaries();
    /**
     *  0 0 0 0 0 0 0
     *  0 0 0 0 0 0 0
@@ -188,6 +198,8 @@ FIXTURE_TEST_CASE(PlayerOneWinsWithHorizontalInBottomRow, Fixture)
 
 FIXTURE_TEST_CASE(PlayerTwoWinsWithHorizontalInFifthRow, Fixture)
 {
+   checkBoundaries();
+
    /**
     *  0 0 0 0 0 0 0
     *  0 0 0 0 0 0 0
@@ -212,6 +224,8 @@ FIXTURE_TEST_CASE(PlayerTwoWinsWithHorizontalInFifthRow, Fixture)
 
 FIXTURE_TEST_CASE(PlayerOneWinsWithNegativeDiagonal, Fixture)
 {
+    checkBoundaries();
+
    /**
     *  0 0 0 0 0 0 0
     *  0 0 0 0 0 0 0
@@ -239,6 +253,7 @@ FIXTURE_TEST_CASE(PlayerOneWinsWithNegativeDiagonal, Fixture)
 
 FIXTURE_TEST_CASE(PlayerTwoWinsWithPostiveDiagonal, Fixture)
 {
+    checkBoundaries();
    /**
     *  0 0 0 0 0 0 0
     *  0 0 0 0 0 0 0
@@ -264,6 +279,13 @@ FIXTURE_TEST_CASE(PlayerTwoWinsWithPostiveDiagonal, Fixture)
    ASSERT_EQUAL(2, game.getWinner());
 }
 
+TEST_CASE(YouNeedToCreateATestCaseForGameHandler)
+{
+    //GameHandler handler;
+
+    // how to check that the proper procedure and use of interfaces are done?
+
+}
 
 int main()
 {

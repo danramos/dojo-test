@@ -11,6 +11,7 @@ class GameHandler
 
 public:
     GameHandler(InputOutputInterface& io, NetworkInterface& client);
+
     void play();
 };
 
