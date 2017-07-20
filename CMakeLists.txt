@@ -9,7 +9,7 @@ set(CMAKE_CXX_FLAGS "--std=c++11 -Wall -Werror -Wno-return-type")
 add_subdirectory("tools")
 
 include_directories("./include" "./tools/include")
-file(GLOB sources ".src/*.cpp")
+file(GLOB sources "./src/*.cpp")
 
 add_executable(${PROJECT_TEST} "test/test.cpp" ${sources})
 
