@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 2.8)
 
-project(floating-numbers)
+project(look-and-say)
 
 set(PROJECT_TEST "${PROJECT_NAME}-test")
 
