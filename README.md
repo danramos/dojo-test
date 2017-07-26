@@ -1,1 +1,2 @@
-master branch: bare boilerplate
+dojo 6:
+Look and Say
