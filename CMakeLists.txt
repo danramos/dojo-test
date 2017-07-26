@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 2.8)
 
-project(dojo-bare)
+project(floating-numbers)
 
 set(PROJECT_TEST "${PROJECT_NAME}-test")
 
